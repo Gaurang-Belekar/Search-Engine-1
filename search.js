@@ -43,9 +43,17 @@ function searchQuery() {
   console.log(queryString)
   let results = miniSearch.search(queryString)
   if (results.length == 0) {
+    document.getElementById("searchResults").innerHTML = `
+      <div class="row mt-2 mb-3">
+      <div class="card">
+        <div class="card-body">
+          No Result Found
+        </div>
+        </div>`;
     console.log("No Results found");
   }
   else {
+    document.getElementById("searchResults").innerHTML = `<div></div>`;
     console.log(results);
     for (let i = 0; i < results.length; i++) {
       document.getElementById("searchResults").innerHTML += `
