@@ -35,10 +35,48 @@
     <link rel="stylesheet" href="search.css" />
     <script src="https://cdn.jsdelivr.net/npm/minisearch@3.1.0/dist/umd/index.min.js"></script>
     <script src="search.js"></script>
+    <style>
+        #myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+    </style>
   </head>
   <body>
     <!-- navbar  -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" style="background-color: #00b4d8;">
       <a class="navbar-brand text-white" href="https://iiitdwd.ac.in/"
         ><img
           src="https://iiitdwd.ac.in/img/logon.png"
@@ -93,12 +131,6 @@
             <a class="nav-link" href="#">Events</a>
           </li>
         </ul>
-        <!-- <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form> -->
-
-        <!-- search bar  -->
         <form
           action="javascript:"
           class="search-bar d-flex justify-content-end mx-md-5"
@@ -113,80 +145,67 @@
       </div>
     </nav>
     <!-- nvbar end  -->
+
+    <!--Center Image start-->
     <div class="container">
-      <div class="row mt-5 mb-5">
-        <div
-          class="
-            col-md-12
-            d-flex
-            justify-content-center
-            bg-white
-            col-12 col-xs-12 col-sm-12 col-xl-6
-            mx-auto
-          "
-        >
-          <div class="img-container">
-            <img
-              src="https://iiitdwd.ac.in/img/logon.png"
-              style="object-fit: contain; width: 100%"
-              alt=""
-            />
+        <div class="row mt-5 mb-5">
+          <div
+            class="
+              col-md-12
+              d-flex
+              justify-content-center
+              bg-white
+              col-12 col-xs-12 col-sm-12 col-xl-6
+              mx-auto
+            "
+          >
+            <div class="img-container">
+              <img
+                src="https://iiitdwd.ac.in/img/logon.png"
+                style="object-fit: contain; width: 100%"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+    <div>
+    <!---Center Image End---->
+
+    <h3 class="text-center" style="font-family: 'Arvo', serif; color: #008cff !important; word-spacing: 0.3rem;">IIIT DWD Finder <i class="fas fa-brain mx-3"></i></h3>
+
+    <!---Search bar start---->
+    
+    <div class="container" style="padding-left: 30%; padding-right: 30%;">
+        <div class="dropdown float-left" >
+            <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <div id="myDropdown" class="dropdown-content">
+              <!-- <div id='suggestions'>
+                
+              </div> -->
+            </div>
+        </div>
+        <button class="btn btn-secondary float-right" onclick="searchQuery()">Search</button>    
+    </div>
+
+
+    <!---Seach bar ends----->
+
+    <!---Search Results start---->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row mt-2 mb-3">
+          <div class="col" id="searchResults">
+            <h2 class="text-center">Search Results</h2>
           </div>
         </div>
       </div>
-      <div class="row mt-2 mb-3">
-        <div
-          class="
-            col-md-12
-            p-3
-            d-flex
-            justify-content-center
-            col-12 col-xs-12 col-sm-12 col-xl-12
-            mx-auto
-          "
-        >
-          <h3
-            class="text-center"
-            style="
-              font-family: 'Arvo', serif;
-              color: #008cff !important;
-              word-spacing: 0.3rem;
-            "
-          >
-            IIIT DWD Finder <i class="fas fa-brain mx-3"></i>
-          </h3>
-        </div>
-      </div>
-      <div class="row mt-3" style="width: 100%">
-        <div
-          class="
-            col-md-12
-            search-container
-            p-3
-            bg-white
-            col-12 col-xs-12 col-sm-12 col-xl-12
-            mx-auto
-          "
-        >
-          <input
-            id="querySearch"
-            type="search"
-            class="px-4 py-2 p-4"
-            name="body-search"
-            id="body-search"
-            placeholder="Search Your Item"
-          />
-          <button class="search-button mx-3" onclick="searchQuery()">
-            <p>search</p>
-          </button>
-        </div>
-      </div>
 
-      <div class="row mt-2 mb-3">
-        <div class="col" id="searchResults">
-          <h2 class="text-center">Search Results</h2>
-        </div>
-      </div>
-    </div>
-  </body>
+    <!---Search Results end---->
+
 </html>

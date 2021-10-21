@@ -39,7 +39,7 @@ miniSearch.addAll(documents)
 
 
 function searchQuery() {
-  var queryString = document.getElementById("querySearch").value;
+  var queryString = document.getElementById("myInput").value;
   console.log(queryString)
   let results = miniSearch.search(queryString)
   if (results.length == 0) {
@@ -68,6 +68,33 @@ function searchQuery() {
     }
   }
 }
+
+function filterFunction() {
+  let input, filter, a, i;
+  console.log("FilterFunction running")
+  input = document.getElementById("myInput").value;
+  filter = input.toUpperCase();
+  div = document.getElementById("myDropdown");
+  console.log(input)
+  a = miniSearch.autoSuggest(input, { fuzzy: 0.2 })
+  console.log(a);
+  if(a.length!=0){
+    for (i = 0; i < a.length; i++) {
+      let txtValue = a[i].suggestion;
+      console.log("Suggestion is "+ txtValue);
+      document.getElementById("myDropdown").innerHTML += `
+      <a onClick="document.getElementById("myInput").value = ${txtValue};" >${txtValue}</a>
+      `
+  
+      // if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      //   a[i].style.display = "";
+      // } else {
+      //   a[i].style.display = "none";
+      // }
+    }
+  }
+}
+
 
 //   searchQuery("zen")
   // => [
