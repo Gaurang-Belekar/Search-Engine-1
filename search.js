@@ -78,7 +78,9 @@ function filterFunction() {
   console.log(input)
   a = miniSearch.autoSuggest(input, { fuzzy: 0.2 })
   console.log(a);
+  document.getElementById("myDropdown").innerHTML = `<div></div>`;
   if(a.length!=0){
+
     for (i = 0; i < a.length; i++) {
       let txtValue = a[i].suggestion;
       console.log("Suggestion is "+ txtValue);
@@ -92,6 +94,7 @@ function filterFunction() {
       //   a[i].style.display = "none";
       // }
     }
+
   }
 }
 
