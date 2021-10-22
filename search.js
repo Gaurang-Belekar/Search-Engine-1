@@ -24,6 +24,28 @@ const documents = [
     text: 'At first sight it must seem...',
     category: 'non-fiction'
   },
+  {
+    id: 5,
+    title: 'IIIT Dharwad',
+    text: 'Institute of national Importance',
+    category: 'College'
+  },
+
+  {
+    id: 6,
+    title: 'Director',
+    text: 'Head of the Institute',
+    category: 'College Head'
+  },
+
+  {
+    id: 7,
+    title: 'Dr Kavi Mahesh',
+    text: 'Head of the Institute',
+    category: 'College Head'
+  },
+
+  
   // ...and more
 ]
 
