@@ -45,13 +45,13 @@ const documents = [
     category: 'College Head'
   },
 
-  
+    
   // ...and more
 ]
 
 let miniSearch = new MiniSearch({
-  fields: ['title', 'text'], // fields to index for full-text search
-  storeFields: ['title', 'category'] // fields to return with search results
+  fields: ['title', 'text', 'category'], // fields to index for full-text search
+  storeFields: ['title', 'text', 'category'] // fields to return with search results
 })
 
 // Index all documents
